@@ -8,7 +8,6 @@ const Services = () => {
         axios.get(`http://localhost:5000/api/v1/services?limit=${limit}`)
             .then(data => setServices(data.data))
     }, [limit])
-    console.log(services)
     return (
         <div className="max-w-screen-xl mx-auto px-6">
             this is services

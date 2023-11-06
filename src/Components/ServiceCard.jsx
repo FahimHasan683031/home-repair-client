@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 const ServiceCard = ({service}) => {
-    const {serviceName,serviceImage,providerName,email,price,area,providerDescription,serviceDescription,providerImage }=service
+    const {serviceName,serviceImage,providerName,price,area,serviceDescription,providerImage }=service
     return (
         <div className="rounded-md shadow-md  bg-[#ccfbf186] mb-5">
             <div className="flex items-center justify-between p-3">

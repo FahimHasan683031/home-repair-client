@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import AddService from "../Pages/AddServices/AddService";
 import Privet from "../Privet/Privet";
+import ServiceSingle from "../Pages/Services/ServiceSingle";
 
 export const router = createBrowserRouter([
     {
@@ -33,7 +34,9 @@ export const router = createBrowserRouter([
                 element:<AddService/>
             },
             {
-                path:'/services/:id'
+                path:'/services/:id',
+                element:<ServiceSingle/>,
+                loader:({params})=>fetch(`http://localhost:5000/api/v1/services/${params.id}`)
             }
         ]
     }
