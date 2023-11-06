@@ -3,7 +3,6 @@ import useAuthContext from "../Hoocks/useAuthContext";
 
 const Header = () => {
     const {user,signout}=useAuthContext()
-    console.log(user)
     const signoutHandle =()=>{
         signout()
         .then()

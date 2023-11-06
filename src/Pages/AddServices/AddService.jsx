@@ -25,8 +25,7 @@ const AddService = () => {
 
         axios.post('http://localhost:5000/api/v1/services',service)
             .then(data => {
-                console.log(data.data)
-                if (data.data.acknowledged) {
+                if (data.data.insertedId) {
                     toast.success('Successfully Add Service!')
                     form.reset()
                 }
@@ -39,7 +38,7 @@ const AddService = () => {
 
                 <h1 className="text-center text-teal-600 mb-12 md:text-5xl text-3xl font-bold">Add Service</h1>
 
-                <div className="flex gap-5">
+                <div className="flex flex-col md:flex-row gap-5">
                     <div className=" w-full">
                         <label>
                             Service Name
@@ -56,7 +55,7 @@ const AddService = () => {
                     </div>
                 </div>
 
-                <div className="flex gap-5">
+                <div className="flex flex-col md:flex-row gap-5">
                     <div className=" w-full">
                         <label>
                             Your Name
@@ -72,7 +71,7 @@ const AddService = () => {
                     </div>
                 </div>
 
-                <div className="flex gap-5">
+                <div className="flex flex-col md:flex-row gap-5">
                     <div className=" w-full">
                         <label>
                             price
@@ -87,7 +86,7 @@ const AddService = () => {
                         <input required className="px-4 mt-1 w-full py-2 drop-shadow-lg rounded mb-4" type="text" name="area" placeholder="Enter Service Area" id="" />
                     </div>
                 </div>
-                <div className="flex  gap-5">
+                <div className="flex flex-col md:flex-row  gap-5">
                     <textarea required className=" my-6 drop-shadow-lg p-3 rounded flex-1 " name="serviceDescription" placeholder="Enter Service Description" id="" rows="5"></textarea>
                     <textarea required className=" my-6 drop-shadow-lg p-3 rounded flex-1" name="providerDescription" placeholder="Enter provider Description" id=""  rows="5"></textarea>
                 </div>
