@@ -3,6 +3,7 @@ import axios from 'axios';
 import useAuthContext from "../../Hoocks/useAuthContext";
 import MyBookingsCard from "./MyBookingsCard";
 import PandingServiceCard from "./PandingServiceCard";
+import Swal from "sweetalert2";
 const MySchedule = () => {
     const { user } = useAuthContext()
     // provide services
@@ -17,6 +18,61 @@ const MySchedule = () => {
             .then(res => setBookedServices(res.data))
             .catch(err => console.log(err.massage))
     }, [user])
+// service cancel
+    const cancelHandle = (_id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't  to cancel this Service!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#0d9488",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, cancel it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:5000/api/v1/bookings/${_id}`)
+                    .then(res => {
+                        if (res.data.deletedCount) {
+                            setBookedServices(bookedServices.filter(service=>service._id!==_id))
+                            Swal.fire({
+                                title: "Canceled!",
+                                text: "Your service has been canceled.",
+                                icon: "success"
+                            });
+                        }
+                    })
+                    .catch(err => console.log(err.message))
+            }
+        });
+    }
+
+    // complete order delete
+    const deleteHandle = (_id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't  to delete this Work!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#0d9488",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:5000/api/v1/bookings/${_id}`)
+                    .then(res => {
+                        if (res.data.deletedCount) {
+                            setProvideServices(provideServices.filter(service=>service._id!==_id))
+                            Swal.fire({
+                                title: "Canceled!",
+                                text: "Your Work has been delete.",
+                                icon: "success"
+                            });
+                        }
+                    })
+                    .catch(err => console.log(err.message))
+            }
+        });
+    }
     return (
         <div>
             <div className="max-w-screen-xl mx-auto px-6 my-10 grid grid-cols-1 lg:grid-cols-2  gap-4">
@@ -30,7 +86,7 @@ const MySchedule = () => {
 
                     <div className="md:px-14">
                         {
-                            bookedServices?.map(service =><MyBookingsCard key={service._id} service={service}></MyBookingsCard>)
+                            bookedServices?.map(service =><MyBookingsCard key={service._id} cancelHandle={cancelHandle} service={service}></MyBookingsCard>)
                         }
                     </div>
 
@@ -44,7 +100,7 @@ const MySchedule = () => {
                     </div>
                     <div className="md:px-14">
                         {
-                            provideServices?.map(service => <PandingServiceCard key={service._id} service={service}></PandingServiceCard>)
+                            provideServices?.map(service => <PandingServiceCard key={service._id} deleteHandle={deleteHandle} service={service}></PandingServiceCard>)
                         }
                     </div>
                 </div>
