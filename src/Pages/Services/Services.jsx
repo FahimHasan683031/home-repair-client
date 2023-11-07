@@ -16,12 +16,12 @@ const Services = () => {
     }
     return (
         <div>
-            <div className="bg-[url('https://i.ibb.co/bQ1JWBp/mp-our-services-mobile.png')]  relative bg-no-repeat bg-cover bg-top py-20">
+            <div className="bg-[url('https://i.ibb.co/bQ1JWBp/mp-our-services-mobile.png')]  relative bg-no-repeat bg-cover bg-top py-14">
                 <div className="absolute h-full w-full top-0 z-0 left-0 bg-[#080808a8]"></div>
                 <div className="text-center relative z-20">
                     <h1 className="text-5xl mb-3 font-bold text-teal-500">Our Services</h1>
-                    <input className="w-1/3 px-3 py-[9px] rounded-sm my-5 " placeholder="Search Services By Name..." onChange={searchInputHandle} type="text" name="search" id="" />
-                    <AiOutlineSearch className="text-teal-500 text-3xl absolute top-[87px] right-[460px]"></AiOutlineSearch>
+                    <input className="w-1/3 px-3 py-[9px] rounded-sm my-7 " placeholder="Search Services By Name..." onChange={searchInputHandle} type="text" name="search" id="" />
+                    <AiOutlineSearch className="text-teal-500 text-3xl absolute top-[95px] right-[460px]"></AiOutlineSearch>
                 </div>
 
             </div>

@@ -27,8 +27,8 @@ const Header = () => {
                             user?<li tabIndex={0}>
                             <details>
                                 <summary>Dashboard</summary>
-                                <ul className="p-2 w-40 rounded-sm">
-                                    <li className="text-sm text-gray-500"><Link to='/services'>My Services</Link></li>
+                                <ul className="p-2 w-40 rounded-sm z-40">
+                                    <li className="text-sm text-gray-500"><Link to='/myServices'>My Services</Link></li>
                                     <li className="text-sm text-gray-500"><Link to='/addService'>Add Services</Link></li>
                                     <li className="text-sm text-gray-500"><Link to='/services'>My-schedules</Link></li>
                                 </ul>
@@ -63,7 +63,7 @@ const Header = () => {
                                 <details>
                                     <summary>Dashboard</summary>
                                     <ul className="p-2 w-40 rounded-sm">
-                                        <li className="text-sm text-gray-500"><Link to='/services'>My Services</Link></li>
+                                        <li className="text-sm text-gray-500"><Link to='/myServices'>My Services</Link></li>
                                         <li className="text-sm text-gray-500"><Link to='/addService'>Add Services</Link></li>
                                         <li className="text-sm text-gray-500"><Link to='/services'>My-schedules</Link></li>
                                     </ul>
