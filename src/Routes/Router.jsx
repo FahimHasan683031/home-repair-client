@@ -9,6 +9,7 @@ import Privet from "../Privet/Privet";
 import ServiceSingle from "../Pages/Services/ServiceSingle";
 import MyServices from "../Pages/MyServices/MyServices";
 import UpdateService from "../Pages/UpdateService";
+import MySchedule from "../Pages/MySchedule/MySchedule";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
                 path:'/updateService/:id',
                 element:<UpdateService/>,
                 loader:({params})=>fetch(`http://localhost:5000/api/v1/services/${params.id}`)
+            },
+            {
+                path:'/mySchedule',
+                element:<MySchedule/>
             }
         ]
     }

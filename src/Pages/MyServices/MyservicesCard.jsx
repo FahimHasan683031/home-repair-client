@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 
-const MyservicesCard = ({ service }) => {
+const MyservicesCard = ({ service,deleteHandle }) => {
     const { serviceName, serviceImage, providerName, price, area, serviceDescription, providerImage } = service
+
+   
     return (
         <div className="rounded-md shadow-md  bg-[#ccfbf186] mb-5 flex flex-col lg:flex-row">
-            <div>
+            <div className="lg:w-2/5 w-full">
                 <img src={serviceImage} alt="" className="object-cover object-center w-full h-72 rounded-l-md dark:bg-gray-500" />
             </div>
-            <div className="px-5">
+            <div className="px-5 w-full lg:w-3/5">
                 <h1 className="text-xl my-3 font-bold text-teal-600">{serviceName}</h1>
                 <p className="font-medium text-slate-600 text-[15px]">{serviceDescription.slice(0, 100) + '...'}</p>
                 <h4 className="text-lg mt-3 font-bold text-teal-600">Price: {price}$</h4>
@@ -19,12 +21,12 @@ const MyservicesCard = ({ service }) => {
                             <span className="inline-block text-xs font-medium  text-slate-600">{area}</span>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div className="my-2 pb-2 flex justify-around">
                     <Link to={`/updateService/${service._id}`}><button className="px-3 py-[6px] text-white bg-teal-600 rounded-sm text-sm font-bold"> Update</button></Link>
-                    <Link to={`/services}`}><button className="px-3 py-[6px] text-white bg-teal-600 rounded-sm text-sm font-bold"> Delete</button></Link>
-                    
+                    <button onClick={()=>deleteHandle(service._id)} className="px-3 py-[6px] text-white bg-teal-600 rounded-sm text-sm font-bold"> Delete</button>
+
                 </div>
             </div>
         </div>

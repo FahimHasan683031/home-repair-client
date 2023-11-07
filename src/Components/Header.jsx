@@ -30,7 +30,7 @@ const Header = () => {
                                 <ul className="p-2 w-40 rounded-sm z-40">
                                     <li className="text-sm text-gray-500"><Link to='/myServices'>My Services</Link></li>
                                     <li className="text-sm text-gray-500"><Link to='/addService'>Add Services</Link></li>
-                                    <li className="text-sm text-gray-500"><Link to='/services'>My-schedules</Link></li>
+                                    <li className="text-sm text-gray-500"><Link to='/mySchedule'>My-schedules</Link></li>
                                 </ul>
                             </details>
                         </li>:''
@@ -65,7 +65,7 @@ const Header = () => {
                                     <ul className="p-2 w-40 rounded-sm">
                                         <li className="text-sm text-gray-500"><Link to='/myServices'>My Services</Link></li>
                                         <li className="text-sm text-gray-500"><Link to='/addService'>Add Services</Link></li>
-                                        <li className="text-sm text-gray-500"><Link to='/services'>My-schedules</Link></li>
+                                        <li className="text-sm text-gray-500"><Link to='/mySchedule'>My-schedules</Link></li>
                                     </ul>
                                 </details>
                             </li>:''

@@ -21,7 +21,7 @@ const AddService = () => {
         const providerImage=user.photoURL;
 
         const service = {serviceName,serviceImage,providerName,email,price,area,providerDescription,serviceDescription,providerImage }
-        console.log(service)
+
 
         axios.post('http://localhost:5000/api/v1/services',service)
             .then(data => {
@@ -31,7 +31,7 @@ const AddService = () => {
                 }
 
             })
-            .catch(err=>console.log(err.massage))
+            .catch(err=>console.log(err.message))
     }
     return (
         <div className="max-w-screen-xl mx-auto px-6">
