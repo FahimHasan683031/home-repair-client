@@ -22,7 +22,7 @@ const MyservicesCard = ({ service }) => {
                     
                 </div>
                 <div className="my-2 pb-2 flex justify-around">
-                    <Link to={`/services/${service._id}`}><button className="px-3 py-[6px] text-white bg-teal-600 rounded-sm text-sm font-bold"> Update</button></Link>
+                    <Link to={`/updateService/${service._id}`}><button className="px-3 py-[6px] text-white bg-teal-600 rounded-sm text-sm font-bold"> Update</button></Link>
                     <Link to={`/services}`}><button className="px-3 py-[6px] text-white bg-teal-600 rounded-sm text-sm font-bold"> Delete</button></Link>
                     
                 </div>
