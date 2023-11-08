@@ -1,8 +1,20 @@
-# React + Vite
+# Home Repair
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website Live Link : [https://home-repair-d1660.web.app/](https://home-repair-d1660.web.app/)
 
-Currently, two official plugins are available:
+Website Live Link : [https://home-repait.surge.sh/](https://home-repait.surge.sh/)
+ 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- User Registration.
+- Password Validation.
+- User can Book any services.
+- User can add services.
+- User can manage his booking or services form dashboard manue.
+- Private Routing.
+- user can update or delete his existing services.
+- user can cancel booking and update panding works status.
+- user can delete his complited works.
+
+
