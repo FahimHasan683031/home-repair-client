@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
                 axios.post('https://homerepair-servier.vercel.app/api/v1/access',data,{withCredentials:true})
                 .then(res=>console.log(res.data))
             }else{
-                axios.post('https://homerepair-servier.vercel.app/api/v1/logout',{withCredentials:true})
+                axios.post('https://homerepair-servier.vercel.app/api/v1/logout',data,{withCredentials:true})
                 .then(res=>console.log(res.data))
             }
         })

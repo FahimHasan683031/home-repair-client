@@ -19,7 +19,7 @@ const Banner = () => {
                             deleteSpeed={50}
                             delaySpeed={1000}
                         /></h3>
-                        <p className="text-gray-200 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsa quasi doloremque culpa odio, amet laborum, ipsum vitae necessitatibus maiores eius et, aut fugiat repellendus cupiditate atque quia. Fuga, sapiente?</p>
+                        <p className="text-gray-200 mb-5">Transform Your Space with Expert Home Repairs! Discover top-notch solutions for all your home improvement needs on our website. From quick fixes to major renovations, we've got you covered. Get started now for a more comfortable, beautiful, and functional home.</p>
 
                         <Link className="px-4 py-2 text-white font-medium rounded-sm bg-teal-600 ">Services</Link>
                     </div>
@@ -47,7 +47,7 @@ const Banner = () => {
                             deleteSpeed={50}
                             delaySpeed={1000}
                         /></h3>
-                        <p className="text-gray-200 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsa quasi doloremque culpa odio, amet laborum, ipsum vitae necessitatibus maiores eius et, aut fugiat repellendus cupiditate atque quia. Fuga, sapiente?</p>
+                        <p className="text-gray-200 mb-5">Transform Your Space with Expert Home Repairs! Discover top-notch solutions for all your home improvement needs on our website. From quick fixes to major renovations, we've got you covered. Get started now for a more comfortable, beautiful, and functional home.</p>
 
                         <Link className="px-4 py-2 text-white font-medium rounded-sm bg-teal-600 ">Services</Link>
                     </div>
@@ -75,7 +75,7 @@ const Banner = () => {
                             deleteSpeed={50}
                             delaySpeed={1000}
                         /></h3>
-                        <p className="text-gray-200 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsa quasi doloremque culpa odio, amet laborum, ipsum vitae necessitatibus maiores eius et, aut fugiat repellendus cupiditate atque quia. Fuga, sapiente?</p>
+                        <p className="text-gray-200 mb-5">Transform Your Space with Expert Home Repairs! Discover top-notch solutions for all your home improvement needs on our website. From quick fixes to major renovations, we've got you covered. Get started now for a more comfortable, beautiful, and functional home.</p>
 
                         <Link className="px-4 py-2 text-white font-medium rounded-sm bg-teal-600 ">Services</Link>
                     </div>
@@ -103,7 +103,7 @@ const Banner = () => {
                             deleteSpeed={50}
                             delaySpeed={1000}
                         /></h3>
-                        <p className="text-gray-200 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsa quasi doloremque culpa odio, amet laborum, ipsum vitae necessitatibus maiores eius et, aut fugiat repellendus cupiditate atque quia. Fuga, sapiente?</p>
+                        <p className="text-gray-200 mb-5">Transform Your Space with Expert Home Repairs! Discover top-notch solutions for all your home improvement needs on our website. From quick fixes to major renovations, we've got you covered. Get started now for a more comfortable, beautiful, and functional home.</p>
 
                         <Link className="px-4 py-2 text-white font-medium rounded-sm bg-teal-600 ">Services</Link>
                     </div>

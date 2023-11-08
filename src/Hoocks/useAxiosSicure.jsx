@@ -19,7 +19,7 @@ const useAxiosSecure = () => {
             if(error.response.status===401||error.response.status===403){
                 signout()
                 .then(res=>{
-                    navigate('/login')
+                    navigate('/')
                 })
                 .catch(err=>console.log(err.massage))
 
