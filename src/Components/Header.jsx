@@ -9,7 +9,7 @@ const Header = () => {
         .catch(error=>console.log(error))
     }
     return (
-        <div className=" shadow-md bg-teal-50 ">
+        <div className=" shadow-md bg-teal-50 z-50 relative">
             <div className="flex justify-between items-center   max-w-screen-xl mx-auto px-6 ">
                 <div className="">
                     <img className="w-[40px] h-[40px] mx-auto" src={'https://i.ibb.co/wBp0z2L/home-repair-logo-with-maintenance-tools-and-house-vector-26674415-removebg-preview.png'} alt="" />
@@ -24,7 +24,7 @@ const Header = () => {
                         </li>
 
                         {
-                            user?<li tabIndex={0}>
+                            user?<li tabIndex={0}className="z-40 relative">
                             <details>
                                 <summary>Dashboard</summary>
                                 <ul className="p-2 w-40 rounded-sm z-40">

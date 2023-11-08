@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
-        <div className="carousel  mb-20 w-full">
+        <div className="carousel  mb-32 w-full z-0 relative">
             <div id="slide1" className="carousel-item relative w-full bg-[url('https://hickeysafety.ie/wp-content/uploads/2022/02/Home-repair-1.jpg')] bg-cover  object-contain">
                 <div className="absolute top-0 left-0 w-full h-full bg-[#030303a1] z-0"></div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-7 z-40 relative items-center max-w-5xl pt-10 mx-auto px-6">
