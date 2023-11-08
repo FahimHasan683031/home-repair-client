@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../Config/firebaseConfig";
-
+import axios from 'axios';
 
 export const authContext = createContext()
 const AuthProvider = ({ children }) => {
@@ -40,9 +40,18 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, user => {
-            setUser(user)
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser)
             setIsLoading(false)
+            const email = currentUser?.email 
+            const data={email}
+            if(currentUser){
+                axios.post('https://homerepair-servier.vercel.app/api/v1/access',data,{withCredentials:true})
+                .then(res=>console.log(res.data))
+            }else{
+                axios.post('https://homerepair-servier.vercel.app/api/v1/logout',{withCredentials:true})
+                .then(res=>console.log(res.data))
+            }
         })
         return () => unSubscribe();
     }, [])

@@ -1,0 +1,33 @@
+import axios from "axios";
+import { useEffect } from "react";
+import useAuthContext from "./useAuthContext";
+import { useNavigate } from "react-router-dom";
+
+const axiosSecure = axios.create({
+    baseURL:'https://homerepair-servier.vercel.app',
+    withCredentials:true
+})
+
+const useAxiosSecure = () => {
+    const {signout}=useAuthContext()
+    const navigate=useNavigate()
+    useEffect(()=>{
+        axiosSecure.interceptors.response.use(res=>{
+            return res
+        },error=>{
+            console.log("axios error",error.response)
+            if(error.response.status===401||error.response.status===403){
+                signout()
+                .then(res=>{
+                    navigate('/login')
+                })
+                .catch(err=>console.log(err.massage))
+
+            }
+        })
+    },[])
+
+    return axiosSecure
+};
+
+export default useAxiosSecure;

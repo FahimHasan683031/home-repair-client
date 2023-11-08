@@ -9,11 +9,11 @@ const Header = () => {
         .catch(error=>console.log(error))
     }
     return (
-        <div className=" shadow-md">
-            <div className="flex justify-between items-center py-3  max-w-screen-xl mx-auto px-6 ">
+        <div className=" shadow-md bg-teal-50 ">
+            <div className="flex justify-between items-center   max-w-screen-xl mx-auto px-6 ">
                 <div className="">
-
-                    <h1 className="text-2xl text-teal-500 font-bold">HOME REPAIR</h1>
+                    <img className="w-[40px] h-[40px] mx-auto" src={'https://i.ibb.co/wBp0z2L/home-repair-logo-with-maintenance-tools-and-house-vector-26674415-removebg-preview.png'} alt="" />
+                    <h1 className="text-lg text-teal-600 pb-1 font-bold"><span className="text-slate-700">HOME</span> REPAIR</h1>
                 </div>
 
                 <div className="hidden lg:flex">
@@ -38,13 +38,13 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <div className="">
+                <div className="flex gap-1">
                     <div className="flex gap-3 items-center">
                         {
                             user?<img src={user?.photoURL} className="h-8 w-8 rounded-full " alt="" />:''
                         }
                         {
-                            user?<button className="text-base text-white font-medium px-4 py-1 rounded-full bg-teal-500" onClick={signoutHandle}>Logout</button>:<Link className="text-base text-white font-medium px-4 py-1 rounded-full bg-teal-500" to='/login'>login</Link>
+                            user?<button className="text-base text-white font-medium px-3 py-1 rounded-full bg-teal-600" onClick={signoutHandle}>Logout</button>:<Link className="text-base text-white font-medium px-3 py-1 rounded-full bg-teal-600" to='/login'>login</Link>
                         }
                         
                     </div>

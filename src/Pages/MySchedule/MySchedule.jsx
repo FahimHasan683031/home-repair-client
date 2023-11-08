@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
 import useAuthContext from "../../Hoocks/useAuthContext";
 import MyBookingsCard from "./MyBookingsCard";
 import PandingServiceCard from "./PandingServiceCard";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hoocks/useAxiosSicure";
 const MySchedule = () => {
+    const axiosSecure=useAxiosSecure()
     const { user } = useAuthContext()
     // provide services
     const [provideServices, setProvideServices] = useState([])
     const [bookedServices, setBookedServices] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/bookings?providerEmail=${user?.email}`)
+        axiosSecure.get(`/api/v1/bookings?providerEmail=${user?.email}`)
             .then(res => setProvideServices(res.data))
             .catch(err => console.log(err.massage))
 
-        axios.get(`http://localhost:5000/api/v1/bookings?userEmail=${user?.email}`)
+            axiosSecure.get(`/api/v1/bookings?userEmail=${user?.email}`)
             .then(res => setBookedServices(res.data))
             .catch(err => console.log(err.massage))
-    }, [user])
+    }, [user,axiosSecure])
 // service cancel
     const cancelHandle = (_id) => {
         Swal.fire({
@@ -30,7 +31,7 @@ const MySchedule = () => {
             confirmButtonText: "Yes, cancel it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/api/v1/bookings/${_id}`)
+                axiosSecure.delete(`/api/v1/bookings/${_id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
                             setBookedServices(bookedServices.filter(service=>service._id!==_id))
@@ -58,7 +59,7 @@ const MySchedule = () => {
             confirmButtonText: "Yes, Delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/api/v1/bookings/${_id}`)
+                axiosSecure.delete(`/api/v1/bookings/${_id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
                             setProvideServices(provideServices.filter(service=>service._id!==_id))

@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
 import ServiceCard from "../../Components/ServiceCard";
 import { AiOutlineSearch } from "react-icons/ai";
+import useAxiosSecure from "../../Hoocks/useAxiosSicure";
 const Services = () => {
+    const axiosSecure= useAxiosSecure()
     const [limit, setLimit] = useState(6)
     const [services, setServices] = useState([])
-    const [searchText, setSearchText] = useState('')
+    const [searchText, setSearchText] = useState("")
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/services?limit=${limit}&serviceName=${searchText}`)
+        axiosSecure.get(`/api/v1/services?limit=${limit}&serviceName=${searchText}`)
             .then(data => setServices(data.data))
-    }, [limit, searchText])
+    }, [limit, searchText,axiosSecure])
     const searchInputHandle = e => {
         const value = e.target.value
         setSearchText(value)

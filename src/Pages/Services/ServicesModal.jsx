@@ -1,8 +1,9 @@
 import useAuthContext from "../../Hoocks/useAuthContext";
-import axios from 'axios';
 import toast from "react-hot-toast";
+import useAxiosSecure from "../../Hoocks/useAxiosSicure";
 
 const ServicesModal = ({ service }) => {
+    const axiosSecure=useAxiosSecure()
     const {user}=useAuthContext()
     const {serviceName,serviceImage,providerName,email,price} = service
     const formHandle = (e) => {
@@ -17,7 +18,7 @@ const ServicesModal = ({ service }) => {
         const instruction = form.instruction.value;
         const provider_name = providerName
         const booking = {serviceName,serviceImage,providerEmail,userEmail,servicePrice,takingDate,instruction,provider_name}
-        axios.post('http://localhost:5000/api/v1/bookings',booking)
+        axiosSecure.post('/api/v1/bookings',booking)
         .then(data=>{    
             if (data.data.insertedId) {
                 toast.success('Successfully Add Service!')

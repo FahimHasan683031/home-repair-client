@@ -1,16 +1,17 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import useAuthContext from "../../Hoocks/useAuthContext";
 import MyservicesCard from "./MyservicesCard";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hoocks/useAxiosSicure";
 
 const MyServices = () => {
+    const secureAxios = useAxiosSecure()
     const { user } = useAuthContext()
     const [myServices, setMyServices] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/services?email=${user?.email}`)
+        secureAxios.get(`/api/v1/services?email=${user?.email}`)
             .then(res => setMyServices(res.data))
-    }, [user])
+    }, [user,secureAxios])
 
     // delete service
     const deleteHandle = (_id) => {
@@ -25,7 +26,7 @@ const MyServices = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/api/v1/services/${_id}`)
+                secureAxios.delete(`/api/v1/services/${_id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
                             setMyServices(myServices.filter(service=>service._id!==_id))

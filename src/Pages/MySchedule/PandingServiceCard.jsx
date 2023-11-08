@@ -1,8 +1,9 @@
-import axios from "axios";
 import { useState } from "react";
+import useAxiosSecure from "../../Hoocks/useAxiosSicure";
 
 
 const PandingServiceCard = ({service,deleteHandle}) => {
+    const axiosSecure=useAxiosSecure()
     const{takingDate,servicePrice,serviceImage,serviceName}=service
     const [status,setStatus]=useState(`${service.status?service.status:'Pending'}`)
 
@@ -11,7 +12,7 @@ const PandingServiceCard = ({service,deleteHandle}) => {
        setStatus(statusValue)
         const data ={takingDate,servicePrice,serviceImage,serviceName,status:statusValue}
 
-        axios.put(`http://localhost:5000/api/v1/bookings/${service._id}`,data)
+        axiosSecure.put(`/api/v1/bookings/${service._id}`,data)
         .then(res=>(''))
         .catch(err=>console.log(err.massage))
 

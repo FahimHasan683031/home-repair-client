@@ -1,11 +1,10 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
-
 import toast from "react-hot-toast";
-
-import axios from 'axios';
 import useAuthContext from '../Hoocks/useAuthContext';
+import useAxiosSecure from '../Hoocks/useAxiosSicure';
 
 const UpdateService = () => {
+    const axiosSecure=useAxiosSecure()
     const data = useLoaderData()
     const { user } = useAuthContext()
     const navigate = useNavigate()
@@ -25,7 +24,7 @@ const UpdateService = () => {
         const service = { serviceName, serviceImage, providerName, email, price, area, providerDescription, serviceDescription, providerImage }
         console.log(service)
 
-        axios.put(`http://localhost:5000/api/v1/services/${data._id}`, service)
+        axiosSecure.put(`/api/v1/services/${data._id}`, service)
             .then(res => {
                 if (res.data.modifiedCount) {
                     toast.success('Successfully Update Service!')
