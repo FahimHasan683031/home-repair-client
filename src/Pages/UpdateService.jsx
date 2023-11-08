@@ -1,9 +1,14 @@
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import toast from "react-hot-toast";
 import useAuthContext from '../Hoocks/useAuthContext';
 import useAxiosSecure from '../Hoocks/useAxiosSicure';
+import { useEffect } from 'react';
 
 const UpdateService = () => {
+    const location = useLocation()
+    useEffect(()=>{
+        document.title= "Home Repair"+ location.pathname
+    },[location])
     const axiosSecure=useAxiosSecure()
     const data = useLoaderData()
     const { user } = useAuthContext()

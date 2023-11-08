@@ -3,8 +3,14 @@ import useAuthContext from "../../Hoocks/useAuthContext";
 import MyservicesCard from "./MyservicesCard";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hoocks/useAxiosSicure";
+import { useLocation } from "react-router-dom";
 
 const MyServices = () => {
+ const location = useLocation()
+    useEffect(()=>{
+        document.title= "Home Repair"+ location.pathname
+    },[location])
+    
     const secureAxios = useAxiosSecure()
     const { user } = useAuthContext()
     const [myServices, setMyServices] = useState([])

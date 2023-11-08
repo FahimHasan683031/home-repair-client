@@ -2,8 +2,15 @@
 import toast from "react-hot-toast";
 import useAuthContext from "../../Hoocks/useAuthContext";
 import useAxiosSecure from "../../Hoocks/useAxiosSicure";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const AddService = () => {
+
+    const location = useLocation()
+    useEffect(()=>{
+        document.title= "Home Repair"+ location.pathname
+    },[location])
     const axiosSecure=useAxiosSecure()
     const { user } = useAuthContext()
     const formHandle = e => {

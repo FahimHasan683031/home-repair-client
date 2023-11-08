@@ -1,9 +1,14 @@
-import {  useLoaderData } from "react-router-dom";
+import {  useLoaderData, useLocation } from "react-router-dom";
 import ServicesModal from "./ServicesModal";
 import BookingErrorModal from "./BookingErrorModal";
 import useAuthContext from "../../Hoocks/useAuthContext";
+import { useEffect } from "react";
 
 const ServiceSingle = () => {
+    const location = useLocation()
+    useEffect(()=>{
+        document.title= "Home Repair"+ location.pathname
+    },[location])
     const {user}=useAuthContext()
     const service = useLoaderData()
     const { serviceName, serviceImage, providerName, email, price, area, providerDescription, serviceDescription, providerImage } = service

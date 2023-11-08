@@ -1,12 +1,17 @@
 import { updateProfile } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import useAuthContext from "../Hoocks/useAuthContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Signup = () => {
+    const location = useLocation()
+    useEffect(()=>{
+        document.title= "Home Repair"+ location.pathname
+    },[location]) 
+    
     const { createUseWithEmail, signIngWithGoogle } = useAuthContext()
     const [pasErrorMsg, setpasErrMsg] = useState('')
     const [passwordShow, setPasswordShow] = useState(false)

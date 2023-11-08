@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible, AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import useAuthContext from "../Hoocks/useAuthContext";
 
 const Login = () => {
+    
     const { signIn, signIngWithGoogle, signInWithGithub,user } = useAuthContext()
     console.log(user)
     const location = useLocation()
@@ -46,6 +47,10 @@ const Login = () => {
             })
             .catch(error => console.log(error.message))
     }
+
+    useEffect(()=>{
+        document.title= "Home Repair"+ location.pathname
+    },[location])
     return (
         <div className="">
             <div className="hero min-h-screen bg-base-200">

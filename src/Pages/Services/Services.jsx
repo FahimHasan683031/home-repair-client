@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import ServiceCard from "../../Components/ServiceCard";
 import { AiOutlineSearch } from "react-icons/ai";
 import useAxiosSecure from "../../Hoocks/useAxiosSicure";
+import { useLocation } from "react-router-dom";
 const Services = () => {
+    const location = useLocation()
+    useEffect(()=>{
+        document.title= "Home Repair"+ location.pathname
+    },[location])
     const axiosSecure= useAxiosSecure()
     const [limit, setLimit] = useState(6)
     const [services, setServices] = useState([])

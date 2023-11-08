@@ -4,7 +4,12 @@ import MyBookingsCard from "./MyBookingsCard";
 import PandingServiceCard from "./PandingServiceCard";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hoocks/useAxiosSicure";
+import { useLocation } from "react-router-dom";
 const MySchedule = () => {
+    const location = useLocation()
+    useEffect(()=>{
+        document.title= "Home Repair"+ location.pathname
+    },[location])
     const axiosSecure=useAxiosSecure()
     const { user } = useAuthContext()
     // provide services

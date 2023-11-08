@@ -10,11 +10,13 @@ import ServiceSingle from "../Pages/Services/ServiceSingle";
 import MyServices from "../Pages/MyServices/MyServices";
 import UpdateService from "../Pages/UpdateService";
 import MySchedule from "../Pages/MySchedule/MySchedule";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([ 
     {
         path:'/',
         element:<MainLayout />,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 path:'/',
@@ -22,7 +24,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/services',
-                element:<Privet><Services/></Privet>
+                element:<Services/>
             },
             {
                 path:'/login',
@@ -34,16 +36,16 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/addService',
-                element:<AddService/>
+                element:<Privet><AddService/></Privet>
             },
             {
                 path:'/services/:id',
-                element:<ServiceSingle/>,
+                element:<Privet><ServiceSingle/></Privet>,
                 loader:({params})=>fetch(`https://homerepair-servier.vercel.app/api/v1/services/${params.id}`,{credentials:'include'})
             },
             {
                 path:'/myServices',
-                element:<MyServices/>
+                element:<Privet><MyServices/></Privet>
             },
             {
                 path:'/updateService/:id',
@@ -52,7 +54,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/mySchedule',
-                element:<MySchedule/>
+                element:<Privet><MySchedule/></Privet>
             }
         ]
     }
