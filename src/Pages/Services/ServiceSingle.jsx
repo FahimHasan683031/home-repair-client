@@ -8,8 +8,6 @@ const ServiceSingle = () => {
     const service = useLoaderData()
     const { serviceName, serviceImage, providerName, email, price, area, providerDescription, serviceDescription, providerImage } = service
 
-
-
     return (
         <div className="max-w-screen-md mx-auto px-6">
             <div className="mt-14 mb-5 flex flex-col md:flex-row gap-7">

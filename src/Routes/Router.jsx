@@ -11,7 +11,7 @@ import MyServices from "../Pages/MyServices/MyServices";
 import UpdateService from "../Pages/UpdateService";
 import MySchedule from "../Pages/MySchedule/MySchedule";
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter([ 
     {
         path:'/',
         element:<MainLayout />,
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 element:<ServiceSingle/>,
-                loader:({params})=>fetch(`http://localhost:5000/api/v1/services/${params.id}`)
+                loader:({params})=>fetch(`https://homerepair-servier.vercel.app/api/v1/services/${params.id}`,{credentials:'include'})
             },
             {
                 path:'/myServices',
@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
             {
                 path:'/updateService/:id',
                 element:<UpdateService/>,
-                loader:({params})=>fetch(`http://localhost:5000/api/v1/services/${params.id}`)
+                loader:({params})=>fetch(`https://homerepair-servier.vercel.app/api/v1/services/${params.id}`,{credentials:'include'})
             },
             {
                 path:'/mySchedule',

@@ -1,10 +1,11 @@
+import HomeServices from "./HomeServices";
 
 
 
 const Home = () => {
     return (
         <div>
-            this is home
+            <HomeServices/>
         </div>
     );
 };
