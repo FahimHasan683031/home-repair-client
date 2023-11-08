@@ -6,18 +6,18 @@ import useAxiosSecure from "../../Hoocks/useAxiosSicure";
 import { useLocation } from "react-router-dom";
 
 const MyServices = () => {
- const location = useLocation()
-    useEffect(()=>{
-        document.title= "Home Repair"+ location.pathname
-    },[location])
-    
+    const location = useLocation()
+    useEffect(() => {
+        document.title = "Home Repair" + location.pathname
+    }, [location])
+
     const secureAxios = useAxiosSecure()
     const { user } = useAuthContext()
     const [myServices, setMyServices] = useState([])
     useEffect(() => {
         secureAxios.get(`/api/v1/services?email=${user?.email}`)
             .then(res => setMyServices(res.data))
-    }, [user,secureAxios])
+    }, [user, secureAxios])
 
     // delete service
     const deleteHandle = (_id) => {
@@ -35,7 +35,7 @@ const MyServices = () => {
                 secureAxios.delete(`/api/v1/services/${_id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
-                            setMyServices(myServices.filter(service=>service._id!==_id))
+                            setMyServices(myServices.filter(service => service._id !== _id))
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your service has been deleted.",
@@ -57,11 +57,15 @@ const MyServices = () => {
                 </div>
 
             </div>
+
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl mx-auto px-6 my-16">
                 {
                     myServices?.map(service => <MyservicesCard key={service._id} service={service} deleteHandle={deleteHandle}></MyservicesCard>)
                 }
             </div>
+
+
         </div>
     );
 };

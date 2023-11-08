@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../../Hoocks/useAxiosSicure";
 import ServiceCard from "../../Components/ServiceCard";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import lotianimation from "../../assets/lotianimation.json"
 
 
 const HomeServices = () => {
@@ -11,6 +13,10 @@ const HomeServices = () => {
         axiosSecure.get(`/api/v1/services?limit=4`)
             .then(data => setServices(data.data))
     }, [ axiosSecure])
+    if(!services){
+        return (<Lottie className="w-1/3 h-1/3 mx-auto" animationData={lotianimation}></Lottie>)
+    }
+    
     return (
         <div className="max-w-screen-lg mb-32 mx-auto px-6">
             <h1 className="text-3xl font-bold text-emerald-600 text-center  mb-3"> POPULAR SERVICES </h1>

@@ -3,23 +3,29 @@ import ServiceCard from "../../Components/ServiceCard";
 import { AiOutlineSearch } from "react-icons/ai";
 import useAxiosSecure from "../../Hoocks/useAxiosSicure";
 import { useLocation } from "react-router-dom";
+import Lottie from "lottie-react";
+import lotianimation from "../../assets/lotianimation.json"
 const Services = () => {
     const location = useLocation()
-    useEffect(()=>{
-        document.title= "Home Repair"+ location.pathname
-    },[location])
-    const axiosSecure= useAxiosSecure()
+    useEffect(() => {
+        document.title = "Home Repair" + location.pathname
+    }, [location])
+    const axiosSecure = useAxiosSecure()
     const [limit, setLimit] = useState(6)
-    const [services, setServices] = useState([])
+    const [services, setServices] = useState()
     const [searchText, setSearchText] = useState("")
     useEffect(() => {
         axiosSecure.get(`/api/v1/services?limit=${limit}&serviceName=${searchText}`)
             .then(data => setServices(data.data))
-    }, [limit, searchText,axiosSecure])
+    }, [limit, searchText, axiosSecure])
     const searchInputHandle = e => {
         const value = e.target.value
         setSearchText(value)
     }
+    if(!services){
+        return (<Lottie className="w-1/3 h-1/3 mx-auto" animationData={lotianimation}></Lottie>)
+    }
+    console.log('data')
     return (
         <div>
             <div className="bg-[url('https://i.ibb.co/bQ1JWBp/mp-our-services-mobile.png')]  relative bg-no-repeat bg-cover bg-top py-14">
@@ -33,12 +39,14 @@ const Services = () => {
             </div>
             <div className="max-w-screen-xl mt-16 mx-auto px-6">
 
-
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8">
                     {
                         services?.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
                     }
                 </div>
+
+
+
                 <div className={`text-center ${limit === 0 ? 'hidden' : ''}`}>
 
 
