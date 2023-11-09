@@ -9,7 +9,7 @@ const Header = () => {
         .catch(error=>console.log(error))
     }
     return (
-        <div className=" shadow-md bg-teal-50 z-50 relative">
+        <div className=" shadow-md bg-teal-100 z-50 relative">
             <div className="flex justify-between items-center   max-w-screen-xl mx-auto px-6 ">
                 <div className="">
                     <img className="w-[40px] h-[40px] mx-auto" src={'https://i.ibb.co/wBp0z2L/home-repair-logo-with-maintenance-tools-and-house-vector-26674415-removebg-preview.png'} alt="" />
@@ -38,13 +38,13 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <div className="flex gap-1">
+                <div className="flex">
                     <div className="flex gap-3 items-center">
                         {
                             user?<img src={user?.photoURL} className="h-8 w-8 rounded-full " alt="" />:''
                         }
                         {
-                            user?<button className="text-base text-white font-medium px-3 py-1 rounded-full bg-teal-600" onClick={signoutHandle}>Logout</button>:<Link className="text-base text-white font-medium px-3 py-1 rounded-full bg-teal-600" to='/login'>login</Link>
+                            user?<button className="text-sm md:text-base text-white font-normal md:font-medium px-2 md:px-3 py-1 rounded-full bg-teal-600" onClick={signoutHandle}>Logout</button>:<Link className="text-sm md:text-base text-white font-normal md:font-medium px-2 md:px-3 py-1 rounded-full bg-teal-600" to='/login'>login</Link>
                         }
                         
                     </div>
@@ -52,17 +52,17 @@ const Header = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 -ml-16  p-2 shadow bg-base-100 rounded-box  ">
+                        <ul tabIndex={0} className="menu rounded-sm menu-sm dropdown-content mt-3 -ml-16  p-2 shadow bg-base-100   ">
                             <li><Link to='/'>Home</Link>
                             </li>
                             <li><Link to='/services'>Services</Link>
                             </li>
 
                             {
-                                user?<li tabIndex={0}>
+                                user?<li  tabIndex={0}>
                                 <details>
                                     <summary>Dashboard</summary>
-                                    <ul className="p-2 w-40 rounded-sm">
+                                    <ul className="p-2 -ml-8 bg-white z-50 w-40 rounded-sm">
                                         <li className="text-sm text-gray-500"><Link to='/myServices'>My Services</Link></li>
                                         <li className="text-sm text-gray-500"><Link to='/addService'>Add Services</Link></li>
                                         <li className="text-sm text-gray-500"><Link to='/mySchedule'>My-schedules</Link></li>

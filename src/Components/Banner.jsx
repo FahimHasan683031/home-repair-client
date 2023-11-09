@@ -6,7 +6,7 @@ const Banner = () => {
         <div className="carousel  mb-32 w-full z-0 relative">
             <div id="slide1" className="carousel-item pt-9 relative w-full bg-[url('https://hickeysafety.ie/wp-content/uploads/2022/02/Home-repair-1.jpg')] bg-cover  object-contain">
                 <div className="absolute top-0 left-0 w-full h-full bg-[#030303a1] z-0"></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-7 z-40 relative items-center max-w-5xl pt-10 mx-auto px-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-7 z-30 relative items-center max-w-5xl pt-10 mx-auto px-6">
                     <div>
                         <h1 className="text-5xl font-bold text-white">Welcome!</h1>
 
@@ -27,7 +27,7 @@ const Banner = () => {
                         <img src={'https://i.ibb.co/zPWWHF7/home-calculator-03-600x536-removebg-preview.png'} alt="" />
                     </div>
                 </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <div className="absolute flex z-50  justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide4" className="btn btn-circle">❮</a>
                     <a href="#slide2" className="btn btn-circle">❯</a>
                 </div>
@@ -55,7 +55,7 @@ const Banner = () => {
                         <img src={'https://i.ibb.co/zPWWHF7/home-calculator-03-600x536-removebg-preview.png'} alt="" />
                     </div>
                 </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <div className="absolute flex z-50  justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide1" className="btn btn-circle">❮</a>
                     <a href="#slide3" className="btn btn-circle">❯</a>
                 </div>
@@ -83,7 +83,7 @@ const Banner = () => {
                         <img src={'https://i.ibb.co/zPWWHF7/home-calculator-03-600x536-removebg-preview.png'} alt="" />
                     </div>
                 </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <div className="absolute z-50  flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide2" className="btn btn-circle">❮</a>
                     <a href="#slide4" className="btn btn-circle">❯</a>
                 </div>
@@ -111,8 +111,8 @@ const Banner = () => {
                         <img src={'https://i.ibb.co/zPWWHF7/home-calculator-03-600x536-removebg-preview.png'} alt="" />
                     </div>
                 </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide3" className="btn btn-circle">❮</a>
+                <div className="absolute z-50  flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" className="btn  btn-circle">❮</a>
                     <a href="#slide1" className="btn btn-circle">❯</a>
                 </div>
             </div>

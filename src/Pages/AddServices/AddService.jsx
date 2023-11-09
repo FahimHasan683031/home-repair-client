@@ -94,8 +94,8 @@ const AddService = () => {
                     </div>
                 </div>
                 <div className="flex flex-col md:flex-row  gap-5">
-                    <textarea required className=" my-6 drop-shadow-lg p-3 rounded flex-1 " name="serviceDescription" placeholder="Enter Service Description" id="" rows="5"></textarea>
-                    <textarea required className=" my-6 drop-shadow-lg p-3 rounded flex-1" name="providerDescription" placeholder="Enter provider Description" id=""  rows="5"></textarea>
+                    <textarea required className=" my-3 md:my-6 drop-shadow-lg p-3 rounded flex-1 " name="serviceDescription" placeholder="Enter Service Description" id="" rows="5"></textarea>
+                    <textarea required className="my-3 md:my-6 drop-shadow-lg p-3 rounded flex-1" name="providerDescription" placeholder="Enter provider Description" id=""  rows="5"></textarea>
                 </div>
 
                 <input className="w-full font-bold my-5 cursor-pointer py-3 rounded-md text-white bg-teal-600" type="submit" value="Submit" />

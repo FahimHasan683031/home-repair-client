@@ -50,10 +50,10 @@ const MyServices = () => {
 
     return (
         <div>
-            <div className="bg-[url('https://i.ibb.co/bQ1JWBp/mp-our-services-mobile.png')]  relative bg-no-repeat bg-cover bg-top py-16">
+            <div className="bg-[url('https://i.ibb.co/bQ1JWBp/mp-our-services-mobile.png')]  relative bg-no-repeat bg-cover bg-top py-10 lg:py-16">
                 <div className="absolute h-full w-full top-0 z-0 left-0 bg-[#080808a8]"></div>
                 <div className="text-center relative z-20">
-                    <h1 className="text-5xl mb-3 font-bold text-teal-400">My Services</h1>
+                    <h1 className="text-4xl lg:text-5xl mb-3 font-bold text-teal-500">My Services</h1>
                 </div>
 
             </div>

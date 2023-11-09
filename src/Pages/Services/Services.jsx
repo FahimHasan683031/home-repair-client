@@ -28,12 +28,14 @@ const Services = () => {
     console.log('data')
     return (
         <div>
-            <div className="bg-[url('https://i.ibb.co/bQ1JWBp/mp-our-services-mobile.png')]  relative bg-no-repeat bg-cover bg-top py-14">
+            <div className="bg-[url('https://i.ibb.co/bQ1JWBp/mp-our-services-mobile.png')]   bg-no-repeat bg-cover relative bg-top py-8 lg:py-14">
                 <div className="absolute h-full w-full top-0 z-0 left-0 bg-[#080808a8]"></div>
                 <div className="text-center relative z-20">
-                    <h1 className="text-5xl mb-3 font-bold text-teal-500">Our Services</h1>
-                    <input className="w-1/3 px-3 py-[9px] rounded-sm my-7 " placeholder="Search Services By Name..." onChange={searchInputHandle} type="text" name="search" id="" />
-                    <AiOutlineSearch className="text-teal-500 text-3xl absolute top-[95px] right-[460px]"></AiOutlineSearch>
+                    <h1 className="text-4xl lg:text-5xl  font-bold text-teal-500">Our Services</h1>
+                    <div className=" flex items-center justify-center">
+                    <input className="w-3/5 md:w-2/5 lg:w-1/3 px-3 py-[6px] lg:py-[9px] text-sm rounded-sm my-5 lg:my-7 " placeholder="Search Services By Name..." onChange={searchInputHandle} type="text" name="search" id="" />
+                    <AiOutlineSearch className="text-teal-500 text-2xl -ml-8 md:-ml-10"></AiOutlineSearch>
+                    </div>
                 </div>
 
             </div>

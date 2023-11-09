@@ -53,7 +53,7 @@ const Login = () => {
     },[location])
     return (
         <div className="">
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen ">
                 <div className="hero-content flex-col w-full md:w-4/6 lg:w-1/3">
 
                     <div className=" flex-shrink-0 w-full max-w-sm bg-teal-100 shadow-xl ">

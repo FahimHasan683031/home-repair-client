@@ -1,7 +1,7 @@
 import { FaFacebookF } from "react-icons/fa";
 import { AiFillInstagram, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 const Footer = () => {
-
+    const currentYear = new Date().getFullYear()
     return (
         <div data-aos="zoom-in" className="bg-teal-100 mt-10 ">
 
@@ -45,6 +45,11 @@ const Footer = () => {
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
                 </nav>
+            </div>
+
+            <div className="py-4 border-t border-slate-300 ">
+            <p className="text-[15px] font-medium text-center text-slate-600">&copy; {currentYear} HOME REPAIR. All rights reserved.</p>
+
             </div>
 
         </div>

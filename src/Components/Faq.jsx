@@ -2,8 +2,8 @@
 const Faq = () => {
     return (
         <div>
-            <h1 className="text-3xl font-bold text-emerald-600 text-center  mb-3"> FAQ </h1>
-            <p className=" text-center text-slate-500 mb-10 font-medium leading-7  ">Comon frequently asked question &   their <br /> answer given below.  </p>
+            <h1 className="text-2xl md:text-3xl font-bold text-emerald-600 text-center  mb-3"> FAQ </h1>
+            <p className=" text-center text-sm text-slate-500 mb-10 font-medium leading-7  ">Comon frequently asked question &   their <br /> answer given below.  </p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-screen-xl items-center mx-auto px-6 mb-32">
                 <div className="join join-vertical w-full">
                     <div className="collapse collapse-arrow join-item border border-base-300">

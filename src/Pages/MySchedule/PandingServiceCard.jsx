@@ -21,14 +21,14 @@ const PandingServiceCard = ({service,deleteHandle}) => {
   
 
     return (
-        <div className="flex gap-5 h-[100px] md:w-[400px] mb-5 drop-shadow-lg bg-teal-50 rounded-md">
+        <div className="flex gap-5 h-[120px] md:h-[100px] md:w-[400px] mb-5 drop-shadow-lg bg-teal-50 rounded-md">
             <div className="w-1/4 h-full">
                 <img className="h-full rounded-l w-full" src={serviceImage} alt="" />
                 </div> 
             <div className="w-3/4 py-2">
                 <div className="flex justify-between">
                 <h1 className="font-medium text-teal-600">{serviceName}</h1>
-                <select onChange={statusHandle} value={status} className={`text-sm mr-4 cursor-pointer px-1 py-1 drop-shadow-md  rounded text-white ${status==='Pending'&&'bg-rose-600'||status==='In Progress'&&'bg-sky-500'||status==='Completed'&&'bg-teal-500'} focus:outline-none `} name="status" id="">
+                <select onChange={statusHandle} value={status} className={` text-sm mr-2 h-[29px] cursor-pointer px-1 py-1 drop-shadow-md  rounded-sm text-white ${status==='Pending'&&'bg-rose-500'||status==='In Progress'&&'bg-sky-500'||status==='Completed'&&'bg-teal-500'} focus:outline-none `} name="status" id="">
                     <option  value="Pending">Pending</option>
                     <option  value="In Progress">In Progress</option>
                     <option  value="Completed">Completed</option>
@@ -38,7 +38,7 @@ const PandingServiceCard = ({service,deleteHandle}) => {
                 <div className="flex justify-between">
                 <p className="text-sm font-medium">price: {servicePrice}$</p>
                 {
-                    status === 'Completed'?<button onClick={()=>deleteHandle(service._id)} className="px-2 py-1 text-white text-sm font-medium rounded bg-rose-500">Delete</button>:''
+                    status === 'Completed'?<button onClick={()=>deleteHandle(service._id)} className="px-2 py-[3px] mr-2 text-white text-sm font-medium rounded-sm bg-rose-500">Delete</button>:''
                 }
                 </div>
             </div>

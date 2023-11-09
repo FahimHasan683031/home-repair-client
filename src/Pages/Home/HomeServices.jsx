@@ -19,8 +19,8 @@ const HomeServices = () => {
     
     return (
         <div className="max-w-screen-lg mb-32 mx-auto px-6">
-            <h1 className="text-3xl font-bold text-emerald-600 text-center  mb-3"> POPULAR SERVICES </h1>
-            <p className=" text-center text-slate-500 font-medium leading-7 mb-8 ">We provide vest qualityfull services. We try to <br />  ensure 100% client satisfaction. </p>
+            <h1 className="text-2xl md:text-3xl font-bold text-emerald-600 text-center  mb-3"> POPULAR SERVICES </h1>
+            <p className=" text-center text-slate-500 text-sm md:font-medium  leading-7 mb-8 ">We provide vest qualityfull services. We try to <br />  ensure 100% client satisfaction. </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
                 {
                     services?.map(service=><ServiceCard key={service._id} service={service}></ServiceCard>)

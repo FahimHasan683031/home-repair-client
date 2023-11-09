@@ -12,7 +12,7 @@ const MyBookingsCard = ({service,cancelHandle}) => {
                 <h2 className="my-1">Date: {takingDate}</h2>
                 <div className="flex justify-between">
                 <p className="text-sm font-medium">price: {servicePrice}$</p>
-                <button onClick={()=>cancelHandle(service._id)} className="px-2 py-1 text-white text-sm font-medium rounded bg-teal-500">Cancel</button>
+                <button onClick={()=>cancelHandle(service._id)} className="px-2 py-[3px] mr-2 text-white text-sm font-medium rounded-sm bg-teal-500">Cancel</button>
                 
                 </div>
             </div>
