@@ -3,7 +3,7 @@ import { AiFillInstagram, AiFillLinkedin, AiOutlineTwitter } from "react-icons/a
 const Footer = () => {
     const currentYear = new Date().getFullYear()
     return (
-        <div data-aos="zoom-in" className="bg-teal-100 mt-10 ">
+        <div data-aos="zoom-in" className="bg-teal-100 ">
 
             <div className="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-4 p-10 max-w-screen-xl mx-auto  text-neutral-content">
 

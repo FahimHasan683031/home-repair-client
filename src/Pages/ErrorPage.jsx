@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 
 const ErrorPage = () => {
     return (
         <div>
+            <Header/>
             <main className="h-screen w-full flex flex-col justify-center items-center bg-teal-200">
                 <h1 className="text-9xl font-extrabold text-teal-600 tracking-widest">404</h1>
                 <div className="bg-white px-2 text-sm rounded rotate-12 absolute">
@@ -23,6 +26,7 @@ const ErrorPage = () => {
                     </a>
                 </button>
             </main>
+            <Footer/>
         </div>
     );
 };

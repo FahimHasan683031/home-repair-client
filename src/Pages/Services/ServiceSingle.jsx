@@ -58,7 +58,7 @@ const ServiceSingle = () => {
                 </div>
             </div>
 
-            <div>
+            <div className="mb-20">
                 <h1 className="text-4xl mb-14 font-bold text-teal-600 text-center">Other Services</h1>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {

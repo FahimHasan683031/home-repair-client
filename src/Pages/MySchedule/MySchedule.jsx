@@ -81,7 +81,7 @@ const MySchedule = () => {
     }
     return (
         <div>
-            <div className="max-w-screen-xl mx-auto px-6 my-10 grid grid-cols-1 lg:grid-cols-2  gap-4">
+            <div className="max-w-screen-xl mb-24 mx-auto px-6 my-10 grid grid-cols-1 lg:grid-cols-2  gap-4">
                 <div className="lg:border-r-2  lg:border-teal-600 lg:pr-6">
                     <div className="bg-[url('https://i.ibb.co/bQ1JWBp/mp-our-services-mobile.png')]  relative bg-no-repeat bg-cover bg-top py-6 mb-8">
                         <div className="absolute h-full w-full top-0 z-0 left-0 bg-[#080808a8]"></div>
