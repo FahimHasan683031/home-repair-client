@@ -1,9 +1,39 @@
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hoocks/useAxiosSicure";
+import useMyServices from "../../Hoocks/useMyServices";
 
-const MyservicesCard = ({ service,deleteHandle }) => {
+const MyservicesCard = ({ service }) => {
     const { serviceName, serviceImage, providerName, price, area, serviceDescription, providerImage } = service
+    const axiosSecure=useAxiosSecure()
+    const [,refetch] =useMyServices()
+    const deleteHandle = (_id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't  to delete this Service!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#0d9488",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/api/v1/services/${_id}`)
+                    .then(res => {
+                        if (res.data.deletedCount) {
+                            refetch()
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your service has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+                    .catch(err => console.log(err.message))
+            }
+        });
+    }
 
-   
     return (
         <div className="rounded-md shadow-md  bg-[#ccfbf186] mb-5 flex flex-col lg:flex-row">
             <div className="lg:w-2/5 w-full">
@@ -25,7 +55,7 @@ const MyservicesCard = ({ service,deleteHandle }) => {
                 </div>
                 <div className="my-2 pb-2 flex justify-around">
                     <Link to={`/updateService/${service._id}`}><button className="px-3 py-[6px] text-white bg-teal-600 rounded-sm text-sm font-bold"> Update</button></Link>
-                    <button onClick={()=>deleteHandle(service._id)} className="px-3 py-[6px] text-white bg-teal-600 rounded-sm text-sm font-bold"> Delete</button>
+                    <button onClick={() => deleteHandle(service._id)} className="px-3 py-[6px] text-white bg-teal-600 rounded-sm text-sm font-bold"> Delete</button>
 
                 </div>
             </div>

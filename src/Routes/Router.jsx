@@ -11,6 +11,7 @@ import MyServices from "../Pages/MyServices/MyServices";
 import UpdateService from "../Pages/UpdateService";
 import MySchedule from "../Pages/MySchedule/MySchedule";
 import ErrorPage from "../Pages/ErrorPage";
+import Dashboard from "../Layout/Dashboard";
 
 export const router = createBrowserRouter([ 
     {
@@ -55,6 +56,24 @@ export const router = createBrowserRouter([
             {
                 path:'/mySchedule',
                 element:<Privet><MySchedule/></Privet>
+            }
+        ]
+    },
+    {
+        path:'dashboard',
+        element:<Dashboard/>,
+        children:[
+            {
+                path:'myServices',
+                element:<MyServices/>
+            },
+            {
+                path:'addServices',
+                element:<AddService/>
+            },
+            {
+                path:'mySchedules',
+                element:<MySchedule/>
             }
         ]
     }

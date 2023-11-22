@@ -5,8 +5,10 @@ import { FcGoogle } from "react-icons/fc";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import useAuthContext from "../Hoocks/useAuthContext";
 import { useEffect, useState } from "react";
+import useAxiosSecure from "../Hoocks/useAxiosSicure";
 
 const Signup = () => {
+    const axiosSecure = useAxiosSecure()
     const location = useLocation()
     useEffect(()=>{
         document.title= "Home Repair"+ location.pathname
@@ -41,15 +43,23 @@ const Signup = () => {
 
         createUseWithEmail(email, password)
             .then((res) => {
-                toast.success('Successfully Register!')
-
+                axiosSecure.post('/api/v1/users', {name,email})
+                .then(res=>{
+                    console.log(res.data)
+                    if(res.data.insertedId){
+                        toast.success('Successfully Register!')
+                        navigate('/login')
+                    }
+                })
+                .catch(err=>console.log(err.massage))
+                
                 // update user 
                 updateProfile(res.user, {
                     displayName: name, photoURL: url
                 })
                     .then()
                     .catch(error => console.log(error.message))
-                navigate('/login')
+                
             })
             .catch(() => {
                 toast.error("This email already used.")
@@ -61,7 +71,11 @@ const Signup = () => {
 
     const googleSigninHandle = () => {
         signIngWithGoogle()
-            .then(() => {
+            .then(res => {
+                const user ={ name:res.user.displayName, email:res.user.email}
+                axiosSecure.post('/api/v1/users',user)
+                .then()
+                .catch(err=>console.log(err.massage))
                 navigate('/')
             })
             .catch(error => console.log(error.message))

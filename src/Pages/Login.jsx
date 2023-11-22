@@ -4,9 +4,10 @@ import { AiFillEye, AiFillEyeInvisible, AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
 import useAuthContext from "../Hoocks/useAuthContext";
+import useAxiosSecure from "../Hoocks/useAxiosSicure";
 
 const Login = () => {
-    
+    const axiosSecure=useAxiosSecure()
     const { signIn, signIngWithGoogle, signInWithGithub,user } = useAuthContext()
     console.log(user)
     const location = useLocation()
@@ -32,7 +33,11 @@ const Login = () => {
 
     const googleSigninHandle = () => {
         signIngWithGoogle()
-            .then(() => {
+            .then(res => {
+                const user ={ name:res.user.displayName, email:res.user.email}
+                axiosSecure.post('/api/v1/users',user)
+                .then()
+                .catch(err=>console.log(err.massage))
                 toast.success('Successfully login!')
                 navigate(location?.state ? location.state : '/')
             })
