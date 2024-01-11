@@ -1,7 +1,5 @@
 # Home Repair
 
-Website Live Link : [https://home-repair-d1660.web.app/](https://home-repair-d1660.web.app/)
-
 Website Live Link : [https://home-repait.surge.sh/](https://home-repait.surge.sh/)
  
 

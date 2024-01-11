@@ -24,16 +24,8 @@ const Header = () => {
                         </li>
 
                         {
-                            user?<li tabIndex={0}className="z-40 relative">
-                            <details>
-                                <summary>Dashboard</summary>
-                                <ul className="p-2 w-40 rounded-sm z-40">
-                                    <li className="text-sm text-gray-500"><Link to='/myServices'>My Services</Link></li>
-                                    <li className="text-sm text-gray-500"><Link to='/addService'>Add Services</Link></li>
-                                    <li className="text-sm text-gray-500"><Link to='/mySchedule'>My-schedules</Link></li>
-                                </ul>
-                            </details>
-                        </li>:''
+                            user?<li><Link to='/dashboard'>Dashboard</Link>
+                            </li>:''
                         }
 
                     </ul>
@@ -59,17 +51,9 @@ const Header = () => {
                             </li>
 
                             {
-                                user?<li  tabIndex={0}>
-                                <details>
-                                    <summary>Dashboard</summary>
-                                    <ul className="p-2 -ml-8 bg-white z-50 w-40 rounded-sm">
-                                        <li className="text-sm text-gray-500"><Link to='/myServices'>My Services</Link></li>
-                                        <li className="text-sm text-gray-500"><Link to='/addService'>Add Services</Link></li>
-                                        <li className="text-sm text-gray-500"><Link to='/mySchedule'>My-schedules</Link></li>
-                                    </ul>
-                                </details>
+                            user?<li><Link to='/dashboard'>Dashboard</Link>
                             </li>:''
-                            }
+                        }
                         </ul>
                     </div>
 
